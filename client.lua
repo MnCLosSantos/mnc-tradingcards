@@ -230,6 +230,52 @@ RegisterNetEvent('mnc-tradingcards:client:openShop', function(inventoryCards)
 end)
 
 -- ============================================================
+--  ADMIN PREVIEW — /cardpreview
+--  Opens a read-only binder populated with every card in every
+--  set so admins can QA card images without owning any cards.
+-- ============================================================
+RegisterNetEvent('mnc-tradingcards:client:openCardPreview', function()
+    if isUIOpen then return end
+
+    -- Build a fake "storedCards" table containing one copy of every card
+    local allCards = {}
+    for setId, setData in pairs(Config.Sets) do
+        for _, card in ipairs(setData.cards) do
+            allCards[#allCards + 1] = {
+                id        = setId .. '_' .. card.number,
+                setId     = setId,
+                number    = card.number,
+                name      = card.name,
+                model     = card.model,
+                image     = card.image,
+                background = card.background,
+                rarity    = card.rarity,
+                printNum  = card.printNum,
+                value     = card.value,
+                preview   = true,   -- flag so JS can hide sell/remove controls
+            }
+        end
+    end
+
+    OpenUI()
+    SendNUIMessage({
+        type           = 'openBinder',
+        binderId       = 'preview',
+        sets           = Config.Sets,
+        rarities       = Config.Rarities,
+        storedCards    = allCards,
+        inventoryCards = {},          -- nothing in inventory — preview only
+        previewMode    = true,
+    })
+end)
+
+RegisterCommand('cardpreview', function(source, args, rawCmd)
+    -- Client-side: server already did the permission check before firing the event,
+    -- but we also guard here so the command only fires via the server route.
+    TriggerServerEvent('mnc-tradingcards:server:requestCardPreview')
+end, false)
+
+-- ============================================================
 --  ESC to close
 -- ============================================================
 CreateThread(function()
