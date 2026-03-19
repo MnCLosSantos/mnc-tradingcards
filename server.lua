@@ -798,8 +798,6 @@ QBCore.Functions.CreateUseableItem('card_binder', function(source, item)
     TriggerClientEvent('mnc-tradingcards:client:startBinder', src, item.slot)
 end)
 
-print("^2[mnc-tradingcards]^7 Script loaded successfully!")
-
 -- ============================================================
 --  SHOP — send player's inventory cards to client for shop UI
 -- ============================================================
@@ -833,3 +831,28 @@ RegisterNetEvent('mnc-tradingcards:server:requestShopOpen', function()
 
     TriggerClientEvent('mnc-tradingcards:client:openShop', src, inventoryCards)
 end)
+
+-- ============================================================
+--  ADMIN CARD PREVIEW  (/cardpreview)
+-- ============================================================
+
+RegisterNetEvent('mnc-tradingcards:server:requestCardPreview', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if not Player then return end
+
+    -- Admin / god permission check
+    if not QBCore.Functions.HasPermission(src, 'admin')
+    and not QBCore.Functions.HasPermission(src, 'god') then
+        TriggerClientEvent('ox_lib:notify', src, {
+            description = 'You do not have permission to use /cardpreview.',
+            type        = 'error',
+        })
+        return
+    end
+
+    -- Fire the preview event back to the requesting client only
+    TriggerClientEvent('mnc-tradingcards:client:openCardPreview', src)
+end)
+
+print("^2[mnc-tradingcards]^7 Script loaded successfully!")
