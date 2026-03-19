@@ -2,7 +2,7 @@
 
 [![FiveM](https://img.shields.io/badge/FiveM-Ready-green.svg)](https://fivem.net/)
 [![QBCore](https://img.shields.io/badge/Framework-QBCore-blue.svg)](https://github.com/qbcore-framework)
-[![Version](https://img.shields.io/badge/Version-1.1.0-brightgreen.svg)]()
+[![Version](https://img.shields.io/badge/Version-1.2.0-brightgreen.svg)]()
 
 ---
 
@@ -317,8 +317,12 @@ Contributions are welcome! Please:
 ---
 
 ## 🔄 Changelog
+ 
+### Version 1.2.0 (Current Release)
+**New Features:**
+- ✨ Added `/cardpreview` admin command — opens a read-only binder populated with every card from every set for image and layout Q/A
 
-### Version 1.1.0 (Current Release)
+### Version 1.1.0 
 **New Features:**
 - ✨ Added Misprint card variant with its own rarity tier and holo effect
 - ✨ Added Damaged card variant with discard mechanic
