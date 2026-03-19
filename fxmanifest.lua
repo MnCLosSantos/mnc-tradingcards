@@ -3,7 +3,7 @@ lua54 'yes'
 game 'gta5'
 
 author 'Stan Leigh'
-description 'MNC Trading Cards System for QB-Core'
+description 'Trading Cards System for QB-Core'
 version '1.2.0'
 
 ui_page 'web/index.html'
