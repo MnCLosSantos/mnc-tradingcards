@@ -181,7 +181,7 @@ Config.Sets = {
             { number = 12, name = 'Skylift',                 model = 'skylift',      rarity = 'rare' },
             { number = 13, name = 'Cargobob Jetsam',         model = 'cargobob3',    rarity = 'rare' },
             { number = 14, name = 'Sea Sparrow',             model = 'seasparrow',   rarity = 'rare' },
-            { number = 15, name = 'Sparrow',                 model = 'sparrow',      rarity = 'rare' },      
+            { number = 15, name = 'Sparrow',                 model = 'seasparrow2',      rarity = 'rare' },      
             { number = 16, name = 'Havok',                   model = 'havok',        rarity = 'rare' },              
             { number = 17, name = 'Savage',                  model = 'savage',       background = 'images/card2back.png', rarity = 'ultraRare', value = 1000 },
             { number = 18, name = 'Hunter',                  model = 'hunter',       background = 'images/card2back.png', rarity = 'ultraRare', value = 1000 },
