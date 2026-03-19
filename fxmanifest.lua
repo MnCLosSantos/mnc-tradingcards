@@ -4,7 +4,7 @@ game 'gta5'
 
 author 'Stan Leigh'
 description 'MNC Trading Cards System for QB-Core'
-version '1.1.0'
+version '1.2.0'
 
 ui_page 'web/index.html'
 
