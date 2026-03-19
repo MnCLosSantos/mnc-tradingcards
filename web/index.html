@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNC Trading Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PACK OPENING UI -->
+<div id="screen-pack-open" class="screen hidden">
+    <div class="pack-open-container">
+        <div class="pack-open-title" id="packOpenTitle">OPEN PACK</div>
+        <div class="pack-open-hint" id="packOpenHint">Drag the top upward to tear open</div>
+        <div class="pack-wrapper" id="packWrapper">
+            <div class="pack-body">
+                <div class="pack-flap" id="packFlap"></div>
+                <div class="pack-perf"></div>
+                <div class="pack-tear-zone" id="packTearZone">
+                    <div class="pack-tear-indicator">TEAR HERE</div>
+                </div>
+                <div class="pack-label">
+                    <span class="pack-label-icon" id="packLabelIcon">🃏</span>
+                    <div class="pack-label-name" id="packLabelName">CARD PACK</div>
+                    <div class="pack-label-type" id="packLabelType">COLLECTOR SERIES</div>
+                </div>
+                <canvas class="pack-drag-progress" id="packProgress" width="44" height="44"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PACK REVEAL -->
+<div id="screen-reveal" class="screen hidden">
+    <div class="reveal-bg"></div>
+    <div class="reveal-container">
+        <div class="reveal-title">PACK REVEAL</div>
+        <div class="reveal-subtitle">Click each card to reveal</div>
+        <div class="reveal-cards" id="revealCards"></div>
+        <button class="btn-primary" id="btnRevealClose">Close</button>
+    </div>
+</div>
+
+<!-- SINGLE CARD VIEW -->
+<div id="screen-card" class="screen hidden">
+    <div class="card-view-bg"></div>
+    <div class="card-view-container">
+        <div class="card-view-inner" id="singleCardContainer"></div>
+        <div id="cardViewDiscard"></div>
+        <button class="btn-secondary" id="btnCardClose">&#x2715; Close</button>
+    </div>
+</div>
+
+<!-- BINDER -->
+<div id="screen-binder" class="screen hidden">
+    <div class="binder-book">
+        <div class="binder-spine">
+            <div class="binder-ring"></div>
+            <div class="binder-ring"></div>
+            <div class="binder-spine-title">CARD BINDER</div>
+            <div class="binder-ring"></div>
+            <div class="binder-ring"></div>
+        </div>
+        <div class="binder-contents">
+            <div class="binder-contents-header">
+                <div class="binder-contents-title">📒 Contents</div>
+                <div class="binder-contents-subtitle">Select a set to view</div>
+            </div>
+            <div class="binder-sets" id="binderSetList"></div>
+        </div>
+        <div class="binder-page" id="binderPage">
+            <div class="binder-remove-zone" id="binderRemoveZone">↑ DRAG HERE TO REMOVE</div>
+            <div class="binder-page-header">
+                <div>
+                    <div class="binder-set-title" id="binderSetTitle">Select a Set</div>
+                    <div class="binder-progress" id="binderProgress"></div>
+                </div>
+                <button class="binder-close-btn" id="btnBinderClose">&#x2715;</button>
+            </div>
+            <div class="binder-page-tab" id="binderPageTab">SET</div>
+            <div class="binder-grid" id="binderGrid"></div>
+        </div>
+    </div>
+</div>
+
+<!-- SHOP -->
+<div id="screen-shop" class="screen hidden">
+    <div class="shop-container">
+        <div class="shop-header">
+            <div class="shop-title">🃏 CARD DEALER</div>
+            <div class="shop-subtitle">Select cards to sell, or sell an entire set</div>
+            <button class="binder-close-btn" id="btnShopClose">&#x2715;</button>
+        </div>
+        <div class="shop-toolbar">
+            <button class="btn-secondary" id="btnShopSelectAll">Select All</button>
+            <div class="shop-total-row">
+                <span class="shop-total-label">Total:</span>
+                <span class="shop-total-val" id="shopTotal">$0</span>
+            </div>
+            <button class="btn-primary" id="btnShopSell" disabled>Sell Selected</button>
+        </div>
+        <div class="shop-grid" id="shopGrid"></div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
