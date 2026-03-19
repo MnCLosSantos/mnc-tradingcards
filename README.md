@@ -305,10 +305,14 @@ Contributions are welcome! Please:
 
 ## 📞 Support & Community
 
-For support, bug reports, or feature requests:
+[![Discord](https://img.shields.io/badge/Discord-Join%20Server-7289da?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/aTBsSZe5C6)
+
+[![GitHub](https://img.shields.io/badge/GitHub-View%20Script-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MnCLosSantos/mnc-tradingcards)
+
+**Need Help?**
 - Open an issue on GitHub
-- Join our Discord community
-- Check existing documentation
+- Join our Discord server
+- Check the troubleshooting section above
 
 ---
 
@@ -357,11 +361,9 @@ For support, bug reports, or feature requests:
 
 ## ⚠️ Important Notes
 
-1. **Database**: Requires oxmysql — MariaDB 10.3+ recommended
-2. **Compatibility**: QBCore only — not compatible with ESX
-3. **Card Images**: Vehicle cards use the Cfx CDN automatically via the `model` field; custom cards require images placed in `web/images/`
-4. **Performance**: NUI is only active while a screen is open — no background resource usage
-5. **Legal**: For use on FiveM servers only, respect Rockstar's Terms of Service
+1. **Compatibility**: QBCore only — not compatible with ESX.
+2. **Card Images**: Vehicle cards use the Cfx CDN automatically via the `model` field; custom cards require images placed in `web/images/`.
+3. **Legal**: For use on FiveM servers only, respect Rockstar's Terms of Service.
 
 ---
 
